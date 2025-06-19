@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+# export all variables from .env file
+set -a
+source $DIR/.env
+
+PHP_CONTAINER=$(docker ps --filter name="${STACK_NAME}_stack_php\." --format "{{.Names}}")
+
+echo "PHP_CONTAINER: $PHP_CONTAINER"
+
+# if argument is not empty, run it in the container
+if [ ! -z "$1" ]; then
+    docker exec -u root -it $PHP_CONTAINER "$@"
+    exit 0
+fi
+
+docker exec -u root -it $PHP_CONTAINER sh "$@"

@@ -1,0 +1,12 @@
+{
+    "name": "palshin/pswcrack",
+    "description": "password cracker tool for test purpose",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Palshin\\PswCrack\\": "src/"
+        }
+    },
+    "require": {}
+}

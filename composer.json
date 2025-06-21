@@ -5,8 +5,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Palshin\\PswCrack\\": "src/"
+            "Palshin\\PswCrack\\": "src/api"
         }
     },
-    "require": {}
+    "require": {
+        "illuminate/database": "^12.19",
+        "php": "^8.4",
+        "symfony/console": "^7.3"
+    }
 }

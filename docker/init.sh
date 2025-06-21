@@ -52,8 +52,6 @@ echo "Setting up stack..."
 echo "API container: $PHP_CONTAINER"
 echo "Installing composer dependencies..."
 docker exec -it -w /app $PHP_CONTAINER sh -c "XDEBUG_MODE=off composer install"
-echo "Migrating database..."
-docker exec -it -w /app $PHP_CONTAINER sh -c "XDEBUG_MODE=off php artisan migrate"
 
 ########################################################################################################################
 # Show info

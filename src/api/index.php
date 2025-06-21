@@ -145,21 +145,24 @@ $fileService = new WriteFileService('./storage/mitm_results.txt', 'ab+');
 
 // Create the attack service
 $attackService = new MeetInTheMiddleAttackService('ThisIs-A-Salt123', $fileService);
-$firstHalfProvider = new ListDataProvider(2, 2, implode(array_merge(range('0', '9'), range('A', 'Z'))));
-$secondHalfProvider = new ListDataProvider(2, 2, implode(array_merge(range('0', '9'), range('A', 'Z'))));
+//$firstHalfProvider = new ListDataProvider(2, 2, implode(array_merge(range('0', '9'), range('A', 'Z'))));
+//$secondHalfProvider = new ListDataProvider(2, 2, implode(array_merge(range('0', '9'), range('A', 'Z'))));
+$firstHalfProvider = $capsule->connection('db')->table('first_half')->whereRaw('length(value)=3')->get();
+$secondHalfProvider = $capsule->connection('db')->table('first_half')->whereRaw('length(value)=2')->get();
 
-$users = $capsule->connection('db')->table('not_so_smart_users')->orderBy('user_id')->lazy()
-    ->each(function (object $user) use ($attackService, $firstHalfProvider, $secondHalfProvider) {
-        $targetHash = $user->password;
-        echo "Target hash: $targetHash\n";
+$users = $capsule->connection('db')->table('not_so_smart_users')->orderBy('user_id')
+    ->chunk(100, function (Illuminate\Support\Collection $users) use ($attackService, $firstHalfProvider, $secondHalfProvider) {
+        $targetHashes = $users->pluck('password');
+//        $targetHash = '501e850a01d3353409ba008b4a9a083e';
+//        echo "Target hash: $targetHashes\n";
         echo "Attacking...\n";
 
         $startTime = microtime(true);
-        $result = $attackService->attack($targetHash, $firstHalfProvider, $secondHalfProvider);
+        $result = $attackService->attackMultiple($targetHashes, $firstHalfProvider, $secondHalfProvider);
         $endTime = microtime(true);
 
         if ($result) {
-            echo "Password found: $result\n";
+            echo "Password found: " . implode(', ', $result) . "\n";
         } else {
             echo "Password not found\n";
         }

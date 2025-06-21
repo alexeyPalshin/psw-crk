@@ -27,7 +27,7 @@ class RainbowTableService
         $values = [];
         foreach ($dataProvider->generate() as $k => $value) {
             if (null !== $value) {
-                $values[] = ['value' => $value];
+                $values[] = ['value' => $value, 'hash' => md5($value)];
 //                $writeService->writeLine($this->format($value));
             }
 

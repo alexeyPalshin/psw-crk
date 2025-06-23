@@ -50,8 +50,8 @@ class GenerateFirstHalfTableCommand extends Command
             $output->writeln('Creating first_half table...');
             $writeService->connection('db')->getSchemaBuilder()->create(self::DB_TABLE, function ($table) {
                 $table->increments('id');
-                $table->string('value', 6);
-                $table->string('hash', 6);
+                $table->string('value', 3);
+                $table->string('hash', 32);
                 $table->index('value');
             });
         }

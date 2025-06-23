@@ -1,270 +1,249 @@
 <script setup>
-  const products = [
-    {
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Bamboo Watch',
-      description: 'Product Description',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      category: 'Accessories',
-      quantity: 24,
-      inventoryStatus: 'INSTOCK',
-      rating: 5
-    },
-    {
-      id: '1001',
-      code: 'nvklal433',
-      name: 'Black Watch',
-      description: 'Product Description',
-      image: 'black-watch.jpg',
-      price: 72,
-      category: 'Accessories',
-      quantity: 61,
-      inventoryStatus: 'INSTOCK',
-      rating: 4
-    },
-    {
-      id: '1002',
-      code: 'zz21cz3c1',
-      name: 'Blue Band',
-      description: 'Product Description',
-      image: 'blue-band.jpg',
-      price: 79,
-      category: 'Fitness',
-      quantity: 2,
-      inventoryStatus: 'LOWSTOCK',
-      rating: 3
-    },
-    {
-      id: '1003',
-      code: '244wgerg2',
-      name: 'Blue T-Shirt',
-      description: 'Product Description',
-      image: 'blue-t-shirt.jpg',
-      price: 29,
-      category: 'Clothing',
-      quantity: 25,
-      inventoryStatus: 'INSTOCK',
-      rating: 5
-    },
-    {
-      id: '1004',
-      code: 'h456wer53',
-      name: 'Bracelet',
-      description: 'Product Description',
-      image: 'bracelet.jpg',
-      price: 15,
-      category: 'Accessories',
-      quantity: 73,
-      inventoryStatus: 'INSTOCK',
-      rating: 4
-    },
-    {
-      id: '1005',
-      code: 'av2231fwg',
-      name: 'Brown Purse',
-      description: 'Product Description',
-      image: 'brown-purse.jpg',
-      price: 120,
-      category: 'Accessories',
-      quantity: 0,
-      inventoryStatus: 'OUTOFSTOCK',
-      rating: 4
-    },
-    {
-      id: '1006',
-      code: 'bib36pfvm',
-      name: 'Chakra Bracelet',
-      description: 'Product Description',
-      image: 'chakra-bracelet.jpg',
-      price: 32,
-      category: 'Accessories',
-      quantity: 5,
-      inventoryStatus: 'LOWSTOCK',
-      rating: 3
-    },
-    {
-      id: '1007',
-      code: 'mbvjkgip5',
-      name: 'Galaxy Earrings',
-      description: 'Product Description',
-      image: 'galaxy-earrings.jpg',
-      price: 34,
-      category: 'Accessories',
-      quantity: 23,
-      inventoryStatus: 'INSTOCK',
-      rating: 5
-    },
-    {
-      id: '1008',
-      code: 'vbb124btr',
-      name: 'Game Controller',
-      description: 'Product Description',
-      image: 'game-controller.jpg',
-      price: 99,
-      category: 'Electronics',
-      quantity: 2,
-      inventoryStatus: 'LOWSTOCK',
-      rating: 4
-    },
-    {
-      id: '1009',
-      code: 'cm230f032',
-      name: 'Gaming Set',
-      description: 'Product Description',
-      image: 'gaming-set.jpg',
-      price: 299,
-      category: 'Electronics',
-      quantity: 63,
-      inventoryStatus: 'INSTOCK',
-      rating: 3
-    },
-    {
-      id: '1010',
-      code: 'plb34234v',
-      name: 'Gold Phone Case',
-      description: 'Product Description',
-      image: 'gold-phone-case.jpg',
-      price: 24,
-      category: 'Accessories',
-      quantity: 0,
-      inventoryStatus: 'OUTOFSTOCK',
-      rating: 4
-    },
-    {
-      id: '1011',
-      code: '4920nnc2d',
-      name: 'Green Earbuds',
-      description: 'Product Description',
-      image: 'green-earbuds.jpg',
-      price: 89,
-      category: 'Electronics',
-      quantity: 23,
-      inventoryStatus: 'INSTOCK',
-      rating: 4
-    },
-    {
-      id: '1012',
-      code: '250vm23cc',
-      name: 'Green T-Shirt',
-      description: 'Product Description',
-      image: 'green-t-shirt.jpg',
-      price: 49,
-      category: 'Clothing',
-      quantity: 74,
-      inventoryStatus: 'INSTOCK',
-      rating: 5
-    },
-    {
-      id: '1013',
-      code: 'fldsmn31b',
-      name: 'Grey T-Shirt',
-      description: 'Product Description',
-      image: 'grey-t-shirt.jpg',
-      price: 48,
-      category: 'Clothing',
-      quantity: 0,
-      inventoryStatus: 'OUTOFSTOCK',
-      rating: 3
-    },
-    {
-      id: '1014',
-      code: 'waas1x2as',
-      name: 'Headphones',
-      description: 'Product Description',
-      image: 'headphones.jpg',
-      price: 175,
-      category: 'Electronics',
-      quantity: 8,
-      inventoryStatus: 'LOWSTOCK',
-      rating: 5
-    },
-    {
-      id: '1015',
-      code: 'vb34btbg5',
-      name: 'Light Green T-Shirt',
-      description: 'Product Description',
-      image: 'light-green-t-shirt.jpg',
-      price: 49,
-      category: 'Clothing',
-      quantity: 34,
-      inventoryStatus: 'INSTOCK',
-      rating: 4
-    },
-    {
-      id: '1016',
-      code: 'k8l6j58jl',
-      name: 'Lime Band',
-      description: 'Product Description',
-      image: 'lime-band.jpg',
-      price: 79,
-      category: 'Fitness',
-      quantity: 12,
-      inventoryStatus: 'INSTOCK',
-      rating: 3
-    },
-    {
-      id: '1017',
-      code: 'v435nn85n',
-      name: 'Mini Speakers',
-      description: 'Product Description',
-      image: 'mini-speakers.jpg',
-      price: 85,
-      category: 'Clothing',
-      quantity: 42,
-      inventoryStatus: 'INSTOCK',
-      rating: 4
-    },
-    {
-      id: '1018',
-      code: '09zx9c0zc',
-      name: 'Painted Phone Case',
-      description: 'Product Description',
-      image: 'painted-phone-case.jpg',
-      price: 56,
-      category: 'Accessories',
-      quantity: 41,
-      inventoryStatus: 'INSTOCK',
-      rating: 5
-    },
-    {
-      id: '1019',
-      code: 'mnb5mb2m5',
-      name: 'Pink Band',
-      description: 'Product Description',
-      image: 'pink-band.jpg',
-      price: 79,
-      category: 'Fitness',
-      quantity: 63,
-      inventoryStatus: 'INSTOCK',
-      rating: 4
-    },
-    {
-      id: '1020',
-      code: 'r23fwf2w3',
-      name: 'Pink Purse',
-      description: 'Product Description',
-      image: 'pink-purse.jpg',
-      price: 110,
-      category: 'Accessories',
-      quantity: 0,
-      inventoryStatus: 'OUTOFSTOCK',
-      rating: 4
-    }]
+import { inject, onMounted, ref } from 'vue';
+
+const api = inject('$axios');
+
+const users = ref();
+const loading = ref(true);
+const loadingCrack = ref(false);
+const crackedHash = ref(false);
+
+onMounted(() => {
+  fetchUsers(api).then((data) => {
+    users.value = data.data;
+    loading.value = false;
+  });
+});
+
+const fetchUsers = (api) => {
+  try {
+    return api.get('/users');
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+const tryCrack = (hash) => {
+  loadingCrack.value = true;
+  crack(api, hash).then((data) => {
+    crackedHash.value = data.data;
+    loadingCrack.value = false;
+  });
+}
+
+const crack = (api, hash) => {
+  try {
+    return api.post(`/crack/${hash}`);
+  } catch (error) {
+    loadingCrack.value = false;
+    console.error(error)
+  }
+};
 </script>
 
 <template>
-  <header>
+  <div class="app-container">
+    <!-- Header Section -->
+    <header class="app-header">
+      <div class="header-content">
+        <h1 class="app-title">Password Cracker</h1>
+        <p class="app-description">Search and manage user passwords securely</p>
+      </div>
+    </header>
 
-  </header>
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Search Section -->
+      <Card class="search-card">
+        <template #header>
+          <div class="card-header">
+            <i class="pi pi-search header-icon"></i>
+            <h2>Crack Passwords</h2>
+          </div>
+        </template>
+        <template #content>
+          <CrackForm @submit="tryCrack" />
+          <CrackedHash v-if="crackedHash" :cracked-hash="crackedHash"/>
+        </template>
+      </Card>
 
-  <main>
-    <DataTable :value="products" tableStyle="min-width: 50rem">
-      <Column field="code" sortable header="Code"></Column>
-      <Column field="name" header="Name"></Column>
-      <Column field="category" header="Category"></Column>
-      <Column field="quantity" header="Quantity"></Column>
-    </DataTable>
-  </main>
+      <!-- Users Table Section -->
+      <Card class="users-card">
+        <template #header>
+          <div class="card-header">
+            <i class="pi pi-users header-icon"></i>
+            <h2>User Database</h2>
+          </div>
+        </template>
+        <template #content>
+          <DataTable 
+            :value="users" 
+            :loading="loading" 
+            paginator 
+            :rows="10" 
+            :rowsPerPageOptions="[5, 10, 20, 50]"
+            tableStyle="min-width: 100%"
+            paginatorTemplate="RowsPerPageDropdown FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
+            currentPageReportTemplate="{first} to {last} of {totalRecords}"
+            class="users-table"
+            stripedRows
+            showGridlines
+          >
+            <template #empty> 
+              <div class="empty-message">
+                <i class="pi pi-info-circle"></i>
+                <span>No users found.</span>
+              </div>
+            </template>
+            <template #loading> 
+              <div class="loading-message">
+                <i class="pi pi-spin pi-spinner"></i>
+                <span>Loading user data...</span>
+              </div>
+            </template>
+            <Column field="user_id" sortable header="ID" headerStyle="width: 20%" bodyStyle="font-weight: bold"></Column>
+            <Column field="password" header="Password Hash" headerStyle="width: 80%"></Column>
+          </DataTable>
+        </template>
+      </Card>
+    </main>
+
+    <footer class="app-footer">
+      <p>© {{ new Date().getFullYear() }}</p>
+    </footer>
+  </div>
 </template>
+
+<style scoped>
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 75rem;
+  gap: 2rem;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #4F46E5, #3730A3);
+  color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.header-content {
+  text-align: center;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.app-description {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+}
+
+.header-icon {
+  font-size: 1.5rem;
+  color: #4F46E5;
+}
+
+.search-card, .users-card {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: #333333;
+}
+
+.search-input {
+  width: 100%;
+}
+
+.users-table {
+  width: 100%;
+}
+
+.empty-message, .loading-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  color: #6B7280;
+}
+
+.app-footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #F3F4F6;
+  color: #6B7280;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .search-container {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .input-group {
+    flex: 1;
+  }
+
+  .search-button {
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    flex-direction: row;
+  }
+
+  .search-card {
+    width: 30%;
+  }
+
+  .users-card {
+    width: 70%;
+  }
+}
+</style>

@@ -6,7 +6,7 @@ namespace Palshin\PswCrack\DataProvider;
  * ListDataProvider generates all possible combinations of characters
  * from a given character set within specified length constraints.
  */
-class ListDataProvider implements DataProviderInterface
+class ListDataProvider
 {
     /**
      * The last character in the character list
@@ -311,6 +311,15 @@ class ListDataProvider implements DataProviderInterface
         return $this;
     }
 
+    /**
+     * Resets the current value to a initial statae
+     *
+     * This can be used to start generation from the beginning
+     *
+     * @param string $value The value to set
+     * @return self
+     * @throws \InvalidArgumentException If the value is invalid
+     */
     public function resetCurrentValue(): self
     {
         $this->currentValue = str_repeat($this->charList[0], $this->minLength);

@@ -34,7 +34,7 @@ class PswCrackController extends BaseController
 
         $response = [
             'hash' => $targetHash,
-            'password' => $result,
+            'password' => $result[$targetHash],
             'found' => $result !== null,
             'time_taken' => round($endTime - $startTime, 4) . ' seconds'
         ];
